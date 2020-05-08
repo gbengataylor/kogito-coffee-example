@@ -1,5 +1,13 @@
 Kogito docs -  https://docs.jboss.org/kogito/release/latest/html_single/#chap-kogito-creating-running
 
+to test locally, run the following in each
+dir
+```
+mvn quarkus:dev
+```
+
+coffee-service will run locally on port 8090 and coffeeshop on 8080. go to localhost:/8080/swagger-ui to test the POST /coffeeprocess API
+
 to deplooy coffee REST to openshift
 ```
 mvn clean package -Dquarkus.kubernetes.deploy=true
@@ -17,7 +25,7 @@ oc new-app registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift~http
 
 ```
 
-to deploy kogito to OCP
+to deploy coffeeshop kogito process to OCP
 
 you can install the kogito operator to openshift, then create a KogitoApp CR that references the git repo/context dir
 
